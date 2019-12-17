@@ -1,0 +1,69 @@
+/**
+ * return responsive values
+ * use mobile as fallback
+ */
+$value-breakpoints: (
+  small,
+  medium,
+  large,
+  xlarge,
+  xxlarge
+) !default;
+
+/**
+ * get breakpoint index
+ */
+@function value-by-index($values, $type: null, $breakpoints: $value-breakpoints) {
+  $length: length($values);
+  $return: null;
+  $breakpointLength: length($breakpoints);
+  $breakpointIndex: index($breakpoints, $type);
+
+  @if $breakpointIndex {
+    @for $i from $breakpointIndex to 1 {
+      @if ($length >= $i) {
+        $value: nth($values, $i);
+        @if $value != null {
+          @return $value;
+        }
+      }
+    }
+  } @elseif ($type != null) {
+    @warn "Unknow breakpoint type, #{$type}";
+  }
+
+  @return nth($values, 1); // fallback smallest value
+}
+
+@function value-by-map($values, $type: null, $breakpoints: $value-breakpoints) {
+  $length: length($values);
+  $return: null;
+  $breakpointLength: length($breakpoints);
+  $keys: map_keys($breakpoints);
+
+  @if map_has_key($breakpoints, $type) {
+    @for $i from $breakpointIndex to 1 {
+      @if ($length >= $i) {
+        $value: nth($values, $i);
+        @if $value != null {
+          @return $value;
+        }
+      }
+    }
+  } @elseif ($type != null) {
+    @warn "Unknow breakpoint type, #{$type}";
+  }
+
+  @return nth($values, 1); // fallback smallest value
+}
+
+/**
+ * core value function to get value by breakpoint
+ */
+@function value($values, $type: null, $breakpoints: $value-breakpoints) {
+  @if type-of($values) == 'map' {
+    @return value-by-map($values, $type, $breakpoints);
+  }
+
+  @return value-by-index($values, $type, $breakpoints);
+}

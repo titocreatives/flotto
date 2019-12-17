@@ -1,0 +1,8 @@
+@mixin ball-gradient($c1, $c2, $c3) {
+  background: radial-gradient(
+    circle at 50% 40%,
+    $c1,
+    $c2 66%,
+    $c3 100%
+  );
+}

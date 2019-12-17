@@ -1,0 +1,32 @@
+/**
+ * responsive properties
+ */
+@mixin property-value($name, $value, $asset: false) {
+  @if ($value != null) {
+    @each $n in $name {
+      @if ($asset) {
+        #{$n}: asset-url($value);
+      } @else {
+        #{$n}: $value;
+      }
+    }
+  }
+}
+
+/**
+ * create responsive property
+ */
+@mixin property($name, $values, $asset: false) {
+  // small first
+  @include property-value($name, value($values, small), $asset);
+
+  @include breakpoint(medium) {
+    @include property-value($name, value($values, medium), $asset);
+  }
+  @include breakpoint(large) {
+    @include property-value($name, value($values, large), $asset);
+  }
+  @include breakpoint(xlarge) {
+    @include property-value($name, value($values, xlarge), $asset);
+  }
+}

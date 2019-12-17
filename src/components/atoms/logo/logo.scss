@@ -1,0 +1,54 @@
+@import "@/scss/index-for-components";
+
+.a.logo {
+  $shadow: 15;
+  $light: white;
+  $dark: black;
+
+  $BP-HEIGHT: (80px, 130px);
+  $BP-WIDTH: (300px, 450px);
+
+  @include property(height, $BP-HEIGHT);
+  @include property(width, $BP-WIDTH);
+
+  animation: sliding-background 40s linear infinite;
+  background: asset('logo-bg.jpg') no-repeat left / 120%;
+
+  text-align: center;
+  overflow: hidden;
+
+  .logo-text {
+    background: $light;
+    color: $dark;
+    -webkit-text-stroke: 1px $dark;
+    letter-spacing: 12px;
+    margin: 0;
+    overflow: hidden;
+    mix-blend-mode: lighten;
+    text-transform: uppercase;
+    $text-shadow: ();
+    @for $i from 1 through $shadow {
+      $text-shadow: $text-shadow, 1px * $i 1px * $i $dark;
+    }
+    text-shadow: 0 0 0, $text-shadow;
+
+    &:before {
+      color: $light;
+      content: attr(data-text);
+      margin-left: -1%;
+      margin-top: -1%;
+      position: absolute;
+    }
+  }
+
+  @keyframes sliding-background {
+    0%,
+    100% {
+      background-position: 0 40%;
+    }
+
+    50% {
+      background-position: 100% 40%;
+    }
+  }
+}

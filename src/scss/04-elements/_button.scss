@@ -1,0 +1,17 @@
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin: unset;
+  padding: $space-micro;
+  color: currentColor;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+}

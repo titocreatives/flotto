@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, p, ul, img, figure {
+  padding: unset;
+  margin: unset;
+  font-size: inherit;
+  font-weight: inherit;
+  border: unset;
+  outline: unset;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+:focus {
+  outline: 0;
+}

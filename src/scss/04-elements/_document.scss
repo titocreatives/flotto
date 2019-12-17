@@ -1,0 +1,15 @@
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font: {
+    size: $font-base-size;
+    family: $font-base-family;
+  }
+
+  line-height: $font-base-lineHeight;
+  margin: 0;
+  color: $font-base-color;
+}

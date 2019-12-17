@@ -1,0 +1,20 @@
+$ball-shadow: radial-gradient(
+  circle at 50% 50%,
+  rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.1) 40%,
+  rgba(0, 0, 0, 0) 50%
+);
+
+$ball-highlight: radial-gradient(
+  circle at 50% 50%,
+  rgba(255, 255, 255, 0.8),
+  rgba(255, 255, 255, 0.8) 14%,
+  rgba(255, 255, 255, 0) 24%
+);
+
+$stage-gradient: linear-gradient(
+  to bottom,
+  rgba(100, 100, 100, 0.2) 0%,
+  rgba(255, 255, 255, 0.5) 40%,
+  #ffffff 100%
+);

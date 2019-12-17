@@ -1,0 +1,11 @@
+query($limit: Int, $type: String) {
+  draw(limit: $limit, type: $type) {
+    success,
+    backendError,
+    draws {
+      date
+      numbers
+      additionalNumbers
+    }
+  }
+}

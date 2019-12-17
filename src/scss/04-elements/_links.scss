@@ -1,0 +1,31 @@
+@import "@/scss/index-for-components";
+
+a {
+  $line: $space-micro / 2;
+
+  position: relative;
+  text-decoration: none;
+  padding-bottom: $line;
+  color: currentColor;
+  opacity: .5;
+
+  &:after {
+    content: '';
+    width: 0;
+    height: $line;
+    @include centerX;
+    bottom: 0;
+    background: currentColor;
+    transition: width 150ms ease-out;
+  }
+
+  &:hover, &.router-link-exact-active {
+    opacity: 1;
+  }
+
+  &.router-link-exact-active {
+    &:after {
+      width: 100%;
+    }
+  }
+}

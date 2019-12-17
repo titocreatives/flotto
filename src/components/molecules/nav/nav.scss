@@ -1,0 +1,7 @@
+.m.nav {
+  .nav-item {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}

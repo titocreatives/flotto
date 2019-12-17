@@ -1,0 +1,10 @@
+article {
+  $offset: (0, $space-medium, $space-large, $space-xlarge);
+
+  @include position(0, 0, 0, 0);
+  @include property(margin, $offset);
+
+  @include breakpoint(medium up){
+    box-shadow: 0 0px 80px rgba(68, 68, 68, 0.5)
+  }
+}

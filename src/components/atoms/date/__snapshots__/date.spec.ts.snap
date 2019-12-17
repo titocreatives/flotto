@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atom Date matches snapshot 1`] = `
+<div
+  class="atom date f-date"
+>
+  <span
+    class="date-day"
+  >
+    1.
+  </span>
+   
+  <span
+    class="date-month"
+  >
+    
+    Dezember
+  
+  </span>
+   
+  <span
+    class="date-year"
+  >
+    2019
+  </span>
+</div>
+`;

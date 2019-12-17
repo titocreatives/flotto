@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organism Layout matches snapshot 1`] = `
+<div
+  class="o layout"
+>
+  <div
+    class="layout-slide"
+  >
+    <header
+      class="layout-above"
+    >
+      above
+    </header>
+     
+    <section
+      class="layout-content"
+    >
+      <router-view-stub
+        name="fade"
+      />
+    </section>
+     
+    <div
+      class="layout-underneath"
+    >
+      underneath
+    </div>
+  </div>
+</div>
+`;

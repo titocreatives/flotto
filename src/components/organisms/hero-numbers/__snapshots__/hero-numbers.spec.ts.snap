@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organism HeroNumbers matches snapshot 1`] = `
+<div
+  class="o hero-numbers"
+>
+  <div
+    class="hero-numbers-grid"
+  >
+    <div
+      class="hero-numbers-cell"
+    >
+      <figure
+        class="ball as-default"
+      >
+        <span
+          class="ball-number f-number"
+        >
+          25
+        </span>
+         
+        <span
+          class="ball-shadow"
+        />
+      </figure>
+    </div>
+    <div
+      class="hero-numbers-cell"
+    >
+      <figure
+        class="ball as-default"
+      >
+        <span
+          class="ball-number f-number"
+        >
+          31
+        </span>
+         
+        <span
+          class="ball-shadow"
+        />
+      </figure>
+    </div>
+    <div
+      class="hero-numbers-cell"
+    >
+      <figure
+        class="ball as-default"
+      >
+        <span
+          class="ball-number f-number"
+        >
+          38
+        </span>
+         
+        <span
+          class="ball-shadow"
+        />
+      </figure>
+    </div>
+    <div
+      class="hero-numbers-cell"
+    >
+      <figure
+        class="ball as-default"
+      >
+        <span
+          class="ball-number f-number"
+        >
+          49
+        </span>
+         
+        <span
+          class="ball-shadow"
+        />
+      </figure>
+    </div>
+    <div
+      class="hero-numbers-cell"
+    >
+      <figure
+        class="ball as-default"
+      >
+        <span
+          class="ball-number f-number"
+        >
+          50
+        </span>
+         
+        <span
+          class="ball-shadow"
+        />
+      </figure>
+    </div>
+    <div
+      class="hero-numbers-cell"
+    >
+      <figure
+        class="ball as-additional"
+      >
+        <span
+          class="ball-number f-number"
+        >
+          5
+        </span>
+         
+        <span
+          class="ball-shadow"
+        />
+      </figure>
+    </div>
+    <div
+      class="hero-numbers-cell"
+    >
+      <figure
+        class="ball as-additional"
+      >
+        <span
+          class="ball-number f-number"
+        >
+          10
+        </span>
+         
+        <span
+          class="ball-shadow"
+        />
+      </figure>
+    </div>
+  </div>
+</div>
+`;

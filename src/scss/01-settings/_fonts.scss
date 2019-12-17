@@ -1,0 +1,56 @@
+/*
+ * font-base vars
+ * font style definition
+ */
+$font-base-family: "Bebas Neue", sans-serif !default;
+$font-meta-family: "Roboto Mono", monospace;
+$font-head-family: "Montserrat", sans-serif;
+
+$font-base-size: 100% !default;
+$font-base-lineHeight: 1 !default;
+$font-base-color: $color-charcoal !default;
+
+$font-size-small: .75em !default;
+$font-size-default: 1em !default;
+$font-size-medium: 1.5em !default;
+$font-size-large: 2em !default;
+
+$font-styles: (
+  logo: (
+    family: $font-head-family,
+    sizes: (
+      52px,
+      80px,
+    ),
+    lines: (
+      80px,
+      130px
+    )
+  ),
+
+  nav: (
+    sizes: (
+      $font-size-medium,
+      $font-size-large,
+    ),
+    lines: (
+      38px,
+      62px
+    )
+  ),
+
+  number: (
+    sizes: 7vw,
+    lines: 0
+  ),
+
+  date: (
+    family: $font-meta-family,
+    sizes: (
+      $font-size-small,
+      $font-size-default
+    ),
+    lines: 1.5
+  )
+
+);

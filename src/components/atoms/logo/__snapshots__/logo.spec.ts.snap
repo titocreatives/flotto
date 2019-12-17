@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atom Logo matches snapshot 1`] = `
+<div
+  class="a logo f-logo"
+>
+  <h1
+    class="logo-text"
+    data-text="Flotto"
+  >
+    Flotto
+  </h1>
+</div>
+`;

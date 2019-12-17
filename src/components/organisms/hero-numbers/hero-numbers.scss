@@ -1,0 +1,51 @@
+@import "@/scss/index-for-components";
+
+.o.hero-numbers {
+  .hero-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: 2%;
+  }
+  .hero-numbers-cell {
+    position: relative;
+    padding-top: 100%;
+    perspective: 1200px;
+  }
+
+  .ball {
+    @include position(0, null, null, 0);
+    @include rect(100%);
+    margin: 0;
+    border-radius: 50%;
+
+    &:after {
+      content: "";
+      @include position(5%, null, null, 10%);
+      @include rect(100%);
+      border-radius: 50%;
+      background: $ball-highlight;
+      transform: translateX(-30%) translateY(-30%) skewX(-20deg);
+      pointer-events: none;
+    }
+
+    &.as-default {
+      @include ball-gradient(#fcfcfc, #efeff1, #9b5050);
+    }
+
+    &.as-additional {
+      @include ball-gradient(#ecfcd9, #defcc6, #9b5050);
+    }
+
+    &-number {
+      @include centerXY;
+    }
+
+    &-shadow {
+      @include position(0, null, null, 0);
+      @include rect(100%);
+      background: $ball-shadow;
+      transform: rotateX(90deg) translateZ(-5.1vw);
+      z-index: -1;
+    }
+  }
+}

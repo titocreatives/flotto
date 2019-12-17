@@ -1,0 +1,13 @@
+/**
+ * font classes
+ *
+ * @prefix f
+ */
+
+.f {
+  @each $name, $style in $font-styles {
+    &-#{$name} {
+      @include font-style($name, $font-styles);
+    }
+  }
+}

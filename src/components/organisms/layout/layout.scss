@@ -1,0 +1,50 @@
+@import "@/scss/index-for-components";
+
+.o.layout {
+  $x-offset: (0, $space-default, $space-medium, $space-large);
+  $offset-y: $space-default;
+
+  min-height: 100%;
+  position: relative;
+
+  .layout {
+    &-slide {
+      @include position(50%, 0, null, 0);
+      @include property((margin-left, margin-right), $x-offset);
+      transform: translateY(-50%);
+    }
+
+    &-content {
+      position: relative;
+      max-height: $space-small;
+      transition: max-height 400ms ease-out;
+      transition-delay: 200ms;
+      overflow: hidden;
+
+      &.is-open {
+        max-height: 300px;
+      }
+    }
+
+    &-above {
+      position: absolute;
+      top: -$offset-y;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+
+    &-underneath {
+      position: absolute;
+      @include property(bottom, (-$space-small, -$offset-y));
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 200ms;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+}
