@@ -7,7 +7,7 @@ const httpLink = new HttpLink({
   uri: "http://localhost:1337/proxy/graphql"
 });
 
-const onErrorLink = onError(({ graphQLErrors }) => {
+const onErrorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     graphQLErrors.map(({ message, locations, path }) =>
       console.log(
@@ -15,6 +15,7 @@ const onErrorLink = onError(({ graphQLErrors }) => {
       )
     );
   }
+  if (networkError) console.log(`[Network error]: ${networkError}`);
 });
 
 const apolloClient = new ApolloClient({

@@ -6,7 +6,7 @@
         v-for="(number, i) in [...numbers, ...additionalNumbers]"
         :key="`${number}-${i}-${Math.random()}`"
       >
-        <figure class="ball" :class="i < 5 ? 'as-default' : 'as-additional'">
+        <figure class="ball" :class="i < numbers.length ? 'as-default' : 'as-additional'">
           <span class="ball-number f-number">{{ number }}</span>
           <span class="ball-shadow" />
         </figure>

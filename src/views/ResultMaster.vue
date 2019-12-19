@@ -1,5 +1,5 @@
 <template>
-  <div :class="`page result-${drawType}`">
+  <div :class="`page result-${lotteries.current}`">
     <section class="result-stage">
       <template v-if="!!drawData.draws">
         <div class="result-nav">
@@ -18,6 +18,11 @@
           >
             ⟶
           </button>
+          <select v-model="lotteries.current" @change="getResults">
+            <option v-for="(t, i) in lotteries.all" :key="i" :value="t">
+              {{ t }}
+            </option>
+          </select>
         </div>
         <HeroNumbers v-bind="currentDraw" />
       </template>
@@ -30,7 +35,7 @@
 import Vue from "vue";
 import { Date } from "@/components/atoms/index";
 import { HeroNumbers } from "@/components/organisms/index";
-import { drawData, drawQueryResult } from "@/types";
+import { drawData, drawQueryResult, LotteryTypes } from "@/types";
 import { ApolloQueryResult } from "apollo-client";
 
 export default Vue.extend({
@@ -45,7 +50,11 @@ export default Vue.extend({
       apollo: this.$apollo,
       drawData: {} as drawData,
       drawsIndex: 0,
-      error: null
+      error: null,
+      lotteries: {
+        current: LotteryTypes.eurojackpot,
+        all: [...Object.keys(LotteryTypes)]
+      }
     };
   },
   props: {
@@ -53,20 +62,18 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    drawType: {
-      type: String,
-      required: true
-    },
     mockData: [Boolean, Object]
   },
   methods: {
     getResults(): void {
+      this.drawsIndex = 0;
+
       this.apollo
         .query({
           query: require("@/graphql/draw.gql"),
           variables: {
             limit: this.drawLimit,
-            type: this.drawType
+            type: this.lotteries.current
           }
         })
         .then(({ data: { draw } }: ApolloQueryResult<drawQueryResult>) => {
@@ -93,6 +100,8 @@ export default Vue.extend({
     }
   },
   created(): void {
+    console.log(Object.keys(LotteryTypes));
+
     if (this.mockData) {
       this.drawData = this.mockData;
     } else {
@@ -115,7 +124,7 @@ $gutter: 2%;
 
 .result {
   &-nav {
-    $width: 250px;
+    $width: 400px;
 
     @include position($space-micro, null, null, $gutter);
 
@@ -137,6 +146,10 @@ $gutter: 2%;
         transform: scale(1.2);
       }
     }
+
+    select {
+      text-transform: capitalize;
+    }
   }
 
   &-stage {
@@ -147,7 +160,7 @@ $gutter: 2%;
       border-radius: $space-small;
     }
 
-    @include breakpoint(small only){
+    @include breakpoint(small only) {
       padding-bottom: 0;
     }
   }

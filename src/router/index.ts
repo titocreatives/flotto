@@ -16,8 +16,7 @@ const RouteEuroJackpot: RouteConfig = {
   name: "eurojackpot",
   component: ResultMaster,
   props: {
-    drawLimit: 20,
-    drawType: "eurojackpot"
+    drawLimit: 20
   }
 };
 

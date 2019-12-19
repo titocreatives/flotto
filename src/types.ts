@@ -43,3 +43,9 @@ export type MonthTranslation = {
   Nov: string;
   Dec: string;
 };
+
+export enum LotteryTypes {
+  eurojackpot = "eurojackpot",
+  powerball = "powerball",
+  megamillions = "megamillions"
+}

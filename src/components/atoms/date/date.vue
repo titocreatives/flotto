@@ -19,8 +19,8 @@ export default Vue.extend({
     value: String
   },
   methods: {
-    setDate(v: string): Date {
-      const [month, day, year]: string[] = this.value.split(" ");
+    getDate(v: string): Date {
+      const [month, day, year]: string[] = v.split(" ");
 
       return {
         month,
@@ -31,7 +31,7 @@ export default Vue.extend({
   },
   computed: {
     date(): Date {
-      return this.setDate(this.value);
+      return this.getDate(this.value);
     }
   },
   filters: {
