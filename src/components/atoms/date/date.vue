@@ -1,8 +1,8 @@
 <template>
   <div class="atom date f-date">
-    <span class="date-day">{{ date.day | noZeroAndDot }}</span>
+    <span class="date-day">{{ date.day | formatDay }}</span>
     <span class="date-month">
-      {{ date.month | germanAndLong }}
+      {{ date.month | formatMonth }}
     </span>
     <span class="date-year">{{ date.year }}</span>
   </div>
@@ -35,12 +35,12 @@ export default Vue.extend({
     }
   },
   filters: {
-    noZeroAndDot(val: string) {
+    formatDay(val: string) {
       const hasZero: boolean = val.charAt(0) === "0";
       val = hasZero ? `${+val}` : val;
       return val + ".";
     },
-    germanAndLong(val: string) {
+    formatMonth(val: string) {
       return GER_MONTH.get(val);
     }
   }

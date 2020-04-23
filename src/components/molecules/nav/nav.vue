@@ -19,26 +19,7 @@ export default Vue.extend({
   props: {
     links: Array as () => NavLinks
   }
-  // ¯\_(ツ)_/¯
-  // render(h: CreateElement): VNode {
-  //   return h(
-  //     "nav",
-  //     this.links.map((link, i) =>
-  //       h(
-  //         "router-link",
-  //         {
-  //           props: {
-  //             to: link.to
-  //           },
-  //           class: ["f-nav"],
-  //           key: `link-${link.title}-${i}`
-  //         },
-  //         [link.title]
-  //       )
-  //     )
-  //   );
-  // }
 });
 </script>
 
-<style src="./nav.scss" lang="scss"></style>
+<style src="./nav.scss" lang="scss" />

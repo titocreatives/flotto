@@ -34,4 +34,4 @@ export default Vue.extend({
 });
 </script>
 
-<style src="./layout.scss" lang="scss"></style>
+<style src="./layout.scss" lang="scss" />

@@ -31,4 +31,4 @@ export default Vue.extend({
 });
 </script>
 
-<style src="./hero-numbers.scss" lang="scss"></style>
+<style src="./hero-numbers.scss" lang="scss" />

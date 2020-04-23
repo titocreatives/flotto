@@ -4,16 +4,16 @@
       <template v-if="!!drawData.draws">
         <div class="result-nav">
           <button
-            @click="hazPast && drawsIndex--"
-            :disabled="!hazPast"
+            @click="hasNext && drawsIndex++"
+            :disabled="!hasNext"
             class="result-nav-prev"
           >
             ⟵
           </button>
           <Date :value="currentDraw.date" class="result-nav-date" />
           <button
-            @click="hazMoah && drawsIndex++"
-            :disabled="!hazMoah"
+            @click="hasPrev && drawsIndex--"
+            :disabled="!hasPrev"
             class="result-nav-next"
           >
             ⟶
@@ -89,10 +89,10 @@ export default Vue.extend({
     }
   },
   computed: {
-    hazMoah(): Boolean {
+    hasNext(): Boolean {
       return this.drawsIndex < this.drawData.draws.length - 1;
     },
-    hazPast(): Boolean {
+    hasPrev(): Boolean {
       return this.drawsIndex > 0;
     },
     currentDraw(): Object {
@@ -100,8 +100,6 @@ export default Vue.extend({
     }
   },
   created(): void {
-    console.log(Object.keys(LotteryTypes));
-
     if (this.mockData) {
       this.drawData = this.mockData;
     } else {

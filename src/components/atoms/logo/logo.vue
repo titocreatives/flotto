@@ -12,4 +12,4 @@ export default Vue.extend({
 });
 </script>
 
-<style src="./logo.scss" lang="scss"></style>
+<style src="./logo.scss" lang="scss" />
